@@ -1,12 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{js,jsx}"],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
         greyscale: {
           surface: {
-            default: "#b9b1c5",
+            default: "#EDECF1",
             subtle: "#f6f5f8",
             disabled: "#dcd8e2",
           },
@@ -85,18 +85,18 @@ export default {
         roboto: ["Roboto", "sans-serif"],
       },
       fontSize: {
-        "9xl": ["148px", { lineHeight: "152px", fontFamily: "Montserrat" }],
-        "8xl": ["120px", { lineHeight: "124px", fontFamily: "Montserrat" }],
-        "7xl": ["96px", { lineHeight: "100px", fontFamily: "Montserrat" }],
-        "6xl": ["76px", { lineHeight: "80px", fontFamily: "Montserrat" }],
-        "5xl": ["64px", { lineHeight: "68px", fontFamily: "Montserrat" }],
-        "4xl": ["48px", { lineHeight: "52px", fontFamily: "Montserrat" }],
-        "3xl": ["40px", { lineHeight: "44px", fontFamily: "Montserrat" }],
-        "2xl": ["32px", { lineHeight: "36px", fontFamily: "Montserrat" }],
-        xl: ["24px", { lineHeight: "32px", fontFamily: "Roboto" }],
-        lg: ["20px", { lineHeight: "28px", fontFamily: "Roboto" }],
-        base: ["16px", { lineHeight: "24px", fontFamily: "Roboto" }],
-        sm: ["12px", { lineHeight: "20px", fontFamily: "Roboto" }],
+        "9xl": ["148px", { lineHeight: "152px" }],
+        "8xl": ["120px", { lineHeight: "124px" }],
+        "7xl": ["96px", { lineHeight: "100px" }],
+        "6xl": ["76px", { lineHeight: "80px" }],
+        "5xl": ["64px", { lineHeight: "68px" }],
+        "4xl": ["48px", { lineHeight: "52px" }],
+        "3xl": ["40px", { lineHeight: "44px" }],
+        "2xl": ["32px", { lineHeight: "36px" }],
+        xl: ["24px", { lineHeight: "32px" }],
+        lg: ["20px", { lineHeight: "28px" }],
+        base: ["16px", { lineHeight: "24px" }],
+        sm: ["12px", { lineHeight: "20px" }],
       },
     },
   },
