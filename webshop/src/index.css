@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-greyscale-surface-default;
+  }
+  h1 {
+    @apply text-5xl font-bold lg:text-9xl text-greyscale-text-title;
+  }
+  h2 {
+    @apply text-4xl font-semibold lg:text-7xl text-greyscale-text-title;
+  }
+  h3 {
+    @apply text-3xl font-semibold lg:text-5xl text-greyscale-text-subtitle;
+  }
+  h4 {
+    @apply text-2xl font-medium lg:text-3xl text-greyscale-text-subtitle;
+  }
+  p {
+    @apply text-base font-normal text-greyscale-text-body;
+  }
+  a {
+    @apply text-lg font-medium text-primary-text-label;
+  }
+}
