@@ -7,16 +7,16 @@
     @apply bg-greyscale-surface-default;
   }
   h1 {
-    @apply text-5xl font-montserrat font-bold lg:text-9xl text-greyscale-text-title;
+    @apply text-4xl font-montserrat font-bold lg:text-5xl text-greyscale-text-title;
   }
   h2 {
-    @apply text-4xl font-montserrat font-semibold lg:text-7xl text-greyscale-text-title;
+    @apply text-3xl font-montserrat font-semibold lg:text-4xl text-greyscale-text-title;
   }
   h3 {
-    @apply text-3xl font-montserrat font-semibold lg:text-5xl text-greyscale-text-subtitle;
+    @apply text-2xl font-montserrat font-semibold lg:text-3xl text-greyscale-text-subtitle;
   }
   h4 {
-    @apply text-2xl font-montserrat font-medium lg:text-3xl text-greyscale-text-subtitle;
+    @apply text-2xl font-montserrat font-medium lg:text-2xl text-greyscale-text-subtitle;
   }
   p {
     @apply text-base font-roboto font-normal text-greyscale-text-body;
