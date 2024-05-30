@@ -16,14 +16,25 @@ const CategoryFilter = ({ setCategory, activeCategory }) => {
 
   return (
     <div className="flex gap-2 mb-4">
-      <button onClick={() => setCategory('all')} className={`rounded ${activeCategory === 'all' ? 'bg-blue-700 text-white' : 'bg-blue-500 text-white'}`}>
+      <button
+        onClick={() => setCategory('all')}
+        className={` rounded-3xl px-4 py-2 ${
+          activeCategory === 'all'
+            ? ' bg-primary-surface-default   text-primary-text-label border  border-primary-border-darker'
+            : ' bg-greyscale-surface-disabled  text-greyscale-text-disabled border border-greyscale-border-disabled'
+        }`}
+      >
         All Products
       </button>
       {categories.map((category) => (
         <button
-          key={category} // Använd kategorinamn som nyckel
+          key={category}
           onClick={() => setCategory(category)}
-          className={`rounded ${activeCategory === category ? 'bg-blue-700 text-white' : 'bg-blue-500 text-white'}`}
+          className={`rounded-3xl px-4 py-2 ${
+            activeCategory === category
+              ? ' bg-primary-surface-default   text-primary-text-label border  border-primary-border-darker'
+              : ' bg-greyscale-surface-disabled  text-greyscale-text-disabled border border-greyscale-border-disabled'
+          }`}
         >
           {category}
         </button>
