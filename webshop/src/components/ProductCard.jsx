@@ -4,8 +4,11 @@ import { getProducts } from '../api/dataFetching';
 import CategoryFilter from './CategoryFilter';
 import Button from './Button';
 import Paginering from './Paginering'; // Importera Paginering
+// import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const ProductCard = () => {
+  // const navigate = useNavigate();
   const {
     data: products,
     error,
@@ -41,6 +44,10 @@ const ProductCard = () => {
   if (isLoading) return <p>Loading....</p>;
   if (error) return <p>Error</p>;
 
+  // const handleSeeMore = (productId) => {
+  //   navigate(`/SingleProductPage/${productId}`);
+  // };
+
   return (
     <div>
       <CategoryFilter setCategory={setCategory} activeCategory={category} />
@@ -55,7 +62,7 @@ const ProductCard = () => {
               <p>{product.category}</p>
             </div>
             <div className="flex justify-between border-t mt-2 pt-2">
-              <Button text={'see more'} />
+              <Button text="See more" to={`/SingleProductPage/${product.id}`} />
               <p>{product.price}$</p>
             </div>
           </div>
