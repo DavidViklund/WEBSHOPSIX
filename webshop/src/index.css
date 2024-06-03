@@ -13,10 +13,10 @@
     @apply text-3xl font-montserrat font-semibold lg:text-4xl text-greyscale-text-title;
   }
   h3 {
-    @apply text-2xl font-montserrat font-semibold lg:text-3xl text-greyscale-text-subtitle;
+    @apply text-2xl font-montserrat font-semibold lg:text-3xl text-greyscale-text-title;
   }
   h4 {
-    @apply text-2xl font-montserrat font-medium lg:text-2xl text-greyscale-text-subtitle;
+    @apply text-2xl font-montserrat font-medium lg:text-2xl text-greyscale-text-title;
   }
   p {
     @apply text-base font-roboto font-normal text-greyscale-text-body;
