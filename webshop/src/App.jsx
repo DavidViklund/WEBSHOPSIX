@@ -6,6 +6,7 @@ import AboutUsPage from './pages/AboutUsPage';
 import CartPage from './pages/CartPage';
 import OrderSummaryPage from './pages/OrderSummaryPage';
 import NavBar from './components/NavBar';
+import SingleProductPage from './pages/SingleProductPage';
 
 // Create a client
 const queryClient = new QueryClient();
@@ -18,6 +19,8 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/ProductPage" element={<ProductPage />} />
+          <Route path="/SingleProductPage/:productId" element={<SingleProductPage />} />
+
           <Route path="/AboutUsPage" element={<AboutUsPage />} />
           <Route path="/CartPage" element={<CartPage />} />
           <Route path="/OrderSummaryPage" element={<OrderSummaryPage />} />
