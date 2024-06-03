@@ -17,7 +17,7 @@ const NavBar = () => {
     <div className="NavBarContainer flex flex-col p-4 justify-center bg-greyscale-surface-default/50 rounded-xl">
       <div className="closedNav flex items-center justify-between">
         <Link className="text-2xl" to="/">
-          <h4>HaulMart</h4>
+          <h4 className=" text-primary-text-label">HaulMart</h4>
         </Link>
         <div
           className="iconBox flex items-center lg:hidden"
