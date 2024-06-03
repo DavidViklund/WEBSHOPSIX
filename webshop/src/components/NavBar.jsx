@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import SecondaryButton from "./SecondaryButton";
+import BasketButton from "./BasketButton";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,44 +20,37 @@ const NavBar = () => {
           <h4>HaulMart</h4>
         </Link>
         <div
-          className="iconBox lg:hidden"
+          className="iconBox flex items-center lg:hidden"
           onClick={toggleMenu}
           style={{ cursor: "pointer" }}
         >
+          <BasketButton
+            icon={<span class="material-symbols-outlined">shopping_cart</span>}
+          ></BasketButton>
           <span className="material-symbols-outlined flex items-center justify-center w-10 h-10">
             {isOpen ? "menu_open" : "menu"}
           </span>
         </div>
         <div className="  gap-2 hidden lg:flex lg:items-center">
           <Link className="navLink" to="/ProductPage" onClick={closeMenu}>
-            ProductPage
+            PRODUCTS
           </Link>
           <Link className="navLink" to="/AboutUsPage" onClick={closeMenu}>
-            AboutUsPage
+            ABOUT US
           </Link>
-          <SecondaryButton
-            to={"/CartPage"}
-            text={"Varukorg"}
+          <BasketButton
             icon={<span class="material-symbols-outlined">shopping_cart</span>}
-          ></SecondaryButton>
+          ></BasketButton>
         </div>
       </div>
       {isOpen && (
         <div className="openNav flex flex-col gap-2 items-center max-w-[1440px]">
           <Link className="navLink" to="/ProductPage" onClick={closeMenu}>
-            ProductPage
+            PRODUCTS
           </Link>
           <Link className="navLink" to="/AboutUsPage" onClick={closeMenu}>
-            AboutUsPage
+            ABOUT US
           </Link>
-          <Link className="navLink" to="/CartPage" onClick={closeMenu}>
-            CartPage
-          </Link>
-          <SecondaryButton
-            to={"/CartPage"}
-            text={"Varukorg"}
-            icon={<span class="material-symbols-outlined">shopping_cart</span>}
-          ></SecondaryButton>
         </div>
       )}
     </div>

@@ -46,10 +46,10 @@ const HeroSection = () => {
   }
 
   return (
-    <div className="heroContainer w-full flex justify-center sm:py-4 md:py-8 lg:py-32">
+    <div className="heroContainer w-full flex justify-center sm:py-4 md:py-8 lg:py-32 ">
       <div className="max-w-[1120px] flex flex-col-reverse items-center gap-6 lg:flex-row lg:justify-between">
-        <div className="flex w-full flex-col gap-6">
-          <div className="max-w-[600px] flex flex-col text-center gap-4 items-start justify-between lg:text-left">
+        <div className=" max-w-[500px] flex flex-col gap-6">
+          <div className=" flex flex-col text-center gap-4 items-start justify-between lg:text-left">
             <h1>Welcome to HaulMart!</h1>
             <p>
               Let's do some shopping! Let's do some shopping! Let's do some
@@ -67,10 +67,10 @@ const HeroSection = () => {
             />
           </div>
         </div>
-        <div className="flex items-center bg-white h-[400px] w-[350px] rounded-xl p-4 overflow-hidden">
+        <div className="flex items-center bg-white  rounded-xl p-4 overflow-hidden">
           {imageUrl ? (
             <img
-              className="w-full h-full object-fit"
+              className=" sm:w-[300px] md:w-[400px] lg:w-[500px] h-[400px] object-fit"
               src={imageUrl}
               alt="Hero"
             />
