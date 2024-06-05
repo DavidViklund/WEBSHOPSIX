@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import BasketButton from "./BasketButton";
+import BasketButton from "./buttons/BasketButton";
 
 const NavBar = ({ cartQty }) => {
   const [isOpen, setIsOpen] = useState(false);

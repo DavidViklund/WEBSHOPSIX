@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
-import Button from "./Button";
-import SecondaryButton from "./SecondaryButton";
+import Button from "./buttons/Button";
+import SecondaryButton from "./buttons/SecondaryButton";
 import { getProducts } from "../api/dataFetching";
 
 const HeroSection = () => {

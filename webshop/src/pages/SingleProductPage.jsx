@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { getProductById } from "../api/dataFetching";
-import Button from "../components/Button";
+import Button from "../components/buttons/Button";
 
 const SingleProductPage = ({ addToCart }) => {
   const { productId } = useParams();
