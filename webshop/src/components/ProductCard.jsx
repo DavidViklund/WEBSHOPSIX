@@ -2,7 +2,7 @@ import React, { useMemo, useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { getProducts } from "../api/dataFetching";
 import CategoryFilter from "./CategoryFilter";
-import Button from "./Button";
+import Button from "./buttons/Button";
 
 const ProductCard = ({ page, itemsPerPage, setTotalProducts }) => {
   const {
