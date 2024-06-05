@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import BasketButton from "./BasketButton";
 
-const NavBar = () => {
+const NavBar = ({ cartQty }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -25,13 +25,17 @@ const NavBar = () => {
           style={{ cursor: "pointer" }}
         >
           <BasketButton
-            icon={<span class="material-symbols-outlined">shopping_cart</span>}
-          ></BasketButton>
+            to="/CartPage"
+            qty={cartQty}
+            icon={
+              <span className="material-symbols-outlined">shopping_cart</span>
+            }
+          />
           <span className="material-symbols-outlined flex items-center justify-center w-10 h-10">
             {isOpen ? "menu_open" : "menu"}
           </span>
         </div>
-        <div className="  gap-2 hidden lg:flex lg:items-center">
+        <div className="gap-2 hidden lg:flex lg:items-center">
           <Link className="navLink" to="/ProductPage" onClick={closeMenu}>
             PRODUCTS
           </Link>
@@ -39,8 +43,12 @@ const NavBar = () => {
             ABOUT US
           </Link>
           <BasketButton
-            icon={<span class="material-symbols-outlined">shopping_cart</span>}
-          ></BasketButton>
+            to="/CartPage"
+            qty={cartQty}
+            icon={
+              <span className="material-symbols-outlined">shopping_cart</span>
+            }
+          />
         </div>
       </div>
       {isOpen && (
