@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-greyscale-surface-default;
+  }
+  h1 {
+    @apply text-4xl font-montserrat font-bold lg:text-5xl text-greyscale-text-title;
+  }
+  h2 {
+    @apply text-3xl font-montserrat font-semibold lg:text-4xl text-greyscale-text-title;
+  }
+  h3 {
+    @apply text-2xl font-montserrat font-semibold lg:text-3xl text-greyscale-text-title;
+  }
+  h4 {
+    @apply text-2xl font-montserrat font-medium lg:text-2xl text-greyscale-text-title;
+  }
+  p {
+    @apply text-base font-roboto font-normal text-greyscale-text-body;
+  }
+  div {
+    @apply text-base font-roboto font-normal text-greyscale-text-body;
+  }
+  a {
+    @apply text-lg font-roboto font-medium text-primary-text-label;
+  }
+  .navLink {
+    @apply p-2 relative  hover:text-primary-text-icon cursor-pointer transition-all ease-in-out before:transition-[width] before:ease-in-out before:duration-700 before:absolute before:bg-primary-text-icon before:origin-center before:h-[2px] before:w-0 hover:before:w-[50%] before:bottom-0 before:left-[50%] after:transition-[width] after:ease-in-out after:duration-700 after:absolute after:bg-primary-text-icon after:origin-center after:h-[2px] after:w-0 hover:after:w-[50%] after:bottom-0 after:right-[50%];
+  }
+}
