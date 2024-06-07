@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import LandingPage from "./pages/LandingPage";
 import AboutUsPage from "./pages/AboutUsPage";
+import Footer from "./components/Footer";
 import CheckoutProvider from "./context/CheckoutProvider";
 import {
   NavBarWrapper,
@@ -35,6 +36,7 @@ const App = () => {
               element={<OrderSummaryPageWrapper />}
             />
           </Routes>
+          <Footer />
         </BrowserRouter>
       </CheckoutProvider>
     </QueryClientProvider>
