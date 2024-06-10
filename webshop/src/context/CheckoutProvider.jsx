@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, { createContext, useContext, useState, useEffect } from 'react';
 
 // Create a context for the checkout
 const CheckoutContext = createContext();
@@ -10,26 +10,24 @@ export const useCheckout = () => {
 const CheckoutProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState(() => {
     // Load cart items from local storage, or start with an empty array
-    const savedCartItems = localStorage.getItem("cartItems");
+    const savedCartItems = localStorage.getItem('cartItems');
     return savedCartItems ? JSON.parse(savedCartItems) : [];
   });
+
+  const [orderSummaryItems, setOrderSummaryItems] = useState([]);
 
   const [flash, setFlash] = useState(false); // State for flash effect
 
   useEffect(() => {
     // Save cart items to local storage whenever they change
-    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
   }, [cartItems]);
 
   const addToCart = (product) => {
     setCartItems((prevItems) => {
       const itemInCart = prevItems.find((item) => item.id === product.id);
       if (itemInCart) {
-        return prevItems.map((item) =>
-          item.id === product.id
-            ? { ...item, quantity: item.quantity + 1 }
-            : item
-        );
+        return prevItems.map((item) => (item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item));
       }
       return [...prevItems, { ...product, quantity: 1 }];
     });
@@ -38,26 +36,31 @@ const CheckoutProvider = ({ children }) => {
   };
 
   const removeFromCart = (productId) => {
-    setCartItems((prevItems) =>
-      prevItems.filter((item) => item.id !== productId)
-    );
+    setCartItems((prevItems) => prevItems.filter((item) => item.id !== productId));
+  };
+
+  const removeAllFromCart = () => {
+    setCartItems([]);
   };
 
   const updateQuantity = (productId, quantity) => {
-    setCartItems((prevItems) =>
-      prevItems.map((item) =>
-        item.id === productId
-          ? { ...item, quantity: Math.max(1, quantity) }
-          : item
-      )
-    );
+    setCartItems((prevItems) => prevItems.map((item) => (item.id === productId ? { ...item, quantity: Math.max(1, quantity) } : item)));
     setFlash(true); // Trigger flash effect when updating quantity
     setTimeout(() => setFlash(false), 500); // Reset flash effect after 500ms
   };
 
   return (
     <CheckoutContext.Provider
-      value={{ cartItems, addToCart, removeFromCart, updateQuantity, flash }}
+      value={{
+        cartItems,
+        addToCart,
+        removeFromCart,
+        removeAllFromCart,
+        updateQuantity,
+        flash,
+        orderSummaryItems,
+        setOrderSummaryItems,
+      }}
     >
       {children}
     </CheckoutContext.Provider>
