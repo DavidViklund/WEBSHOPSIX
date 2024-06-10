@@ -79,7 +79,7 @@ const Basket = ({ cartItems, removeFromCart, updateQuantity }) => {
             <div className="flex items-center justify-start">
               <SuccessButton
                 onClick={handleCheckout}
-                to="/OrderSummaryPage"
+                to="/summary"
                 text={"Pay now"}
               ></SuccessButton>
             </div>

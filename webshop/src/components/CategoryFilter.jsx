@@ -1,5 +1,5 @@
-import { useQuery } from '@tanstack/react-query';
-import { getCategories } from '../api/dataFetching';
+import { useQuery } from "@tanstack/react-query";
+import { getCategories } from "../api/dataFetching";
 
 const CategoryFilter = ({ setCategory, activeCategory }) => {
   const {
@@ -7,7 +7,7 @@ const CategoryFilter = ({ setCategory, activeCategory }) => {
     error,
     isLoading,
   } = useQuery({
-    queryKey: ['categories'],
+    queryKey: ["categories"],
     queryFn: getCategories,
   });
 
@@ -15,30 +15,33 @@ const CategoryFilter = ({ setCategory, activeCategory }) => {
   if (error) return <p>Error loading categories</p>;
 
   return (
-    <div className="flex gap-2 mb-4">
-      <button
-        onClick={() => setCategory('all')}
-        className={` rounded-3xl px-4 py-2 ${
-          activeCategory === 'all'
-            ? ' bg-primary-surface-default   text-primary-text-label border  border-primary-border-darker'
-            : ' bg-greyscale-surface-disabled  text-greyscale-text-disabled border border-greyscale-border-disabled'
-        }`}
-      >
-        All Products
-      </button>
-      {categories.map((category) => (
+    <div className=" flex flex-col gap-2">
+      <h5>Categories</h5>
+      <div className="flex gap-2 mb-4">
         <button
-          key={category}
-          onClick={() => setCategory(category)}
-          className={`rounded-3xl px-4 py-2 ${
-            activeCategory === category
-              ? ' bg-primary-surface-default   text-primary-text-label border  border-primary-border-darker'
-              : ' bg-greyscale-surface-disabled  text-greyscale-text-disabled border border-greyscale-border-disabled'
+          onClick={() => setCategory("all")}
+          className={` rounded-3xl px-4 py-2 ${
+            activeCategory === "all"
+              ? " bg-greyscale-surface-subtle   text-primary-text-label border  border-primary-border-darker hover:bg-primary-surface-darker hover:text-greyscale-text-negative"
+              : " bg-greyscale-surface-disabled  text-greyscale-text-title border border-greyscale-border-disabled hover:bg-primary-surface-darker hover:text-greyscale-text-negative"
           }`}
         >
-          {category}
+          All Products
         </button>
-      ))}
+        {categories.map((category) => (
+          <button
+            key={category}
+            onClick={() => setCategory(category)}
+            className={`rounded-3xl px-4 py-2 ${
+              activeCategory === category
+                ? " bg-greyscale-surface-subtle   text-primary-text-label border  border-primary-border-darker hover:bg-primary-surface-darker hover:text-greyscale-text-negative"
+                : " bg-greyscale-surface-disabled  text-greyscale-text-title border border-greyscale-border-disabled hover:bg-primary-surface-darker hover:text-greyscale-text-negative"
+            }`}
+          >
+            {category}
+          </button>
+        ))}
+      </div>
     </div>
   );
 };

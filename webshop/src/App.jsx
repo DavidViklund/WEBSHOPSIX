@@ -24,17 +24,14 @@ const App = () => {
           <NavBarWrapper />
           <Routes>
             <Route path="/" element={<LandingPage />} />
-            <Route path="/ProductPage" element={<ProductPageWrapper />} />
+            <Route path="/shop" element={<ProductPageWrapper />} />
             <Route
               path="/SingleProductPage/:productId"
               element={<SingleProductPageWrapper />}
             />
-            <Route path="/AboutUsPage" element={<AboutUsPage />} />
-            <Route path="/CartPage" element={<CartPageWrapper />} />
-            <Route
-              path="/OrderSummaryPage"
-              element={<OrderSummaryPageWrapper />}
-            />
+            <Route path="/about" element={<AboutUsPage />} />
+            <Route path="/cart" element={<CartPageWrapper />} />
+            <Route path="/summary" element={<OrderSummaryPageWrapper />} />
           </Routes>
           <Footer />
         </BrowserRouter>
