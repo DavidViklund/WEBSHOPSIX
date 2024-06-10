@@ -25,7 +25,7 @@ const NavBar = ({ cartQty }) => {
           style={{ cursor: "pointer" }}
         >
           <BasketButton
-            to="/CartPage"
+            to="/cart"
             qty={cartQty}
             icon={
               <span className="material-symbols-outlined">shopping_cart</span>
@@ -36,14 +36,14 @@ const NavBar = ({ cartQty }) => {
           </span>
         </div>
         <div className="gap-2 hidden lg:flex lg:items-center">
-          <Link className="navLink" to="/ProductPage" onClick={closeMenu}>
+          <Link className="navLink" to="/shop" onClick={closeMenu}>
             PRODUCTS
           </Link>
-          <Link className="navLink" to="/AboutUsPage" onClick={closeMenu}>
+          <Link className="navLink" to="/about" onClick={closeMenu}>
             ABOUT US
           </Link>
           <BasketButton
-            to="/CartPage"
+            to="/cart"
             qty={cartQty}
             icon={
               <span className="material-symbols-outlined">shopping_cart</span>
@@ -53,10 +53,10 @@ const NavBar = ({ cartQty }) => {
       </div>
       {isOpen && (
         <div className="openNav flex flex-col gap-2 items-center max-w-[1440px]">
-          <Link className="navLink" to="/ProductPage" onClick={closeMenu}>
+          <Link className="navLink" to="/shop" onClick={closeMenu}>
             PRODUCTS
           </Link>
-          <Link className="navLink" to="/AboutUsPage" onClick={closeMenu}>
+          <Link className="navLink" to="/about" onClick={closeMenu}>
             ABOUT US
           </Link>
         </div>

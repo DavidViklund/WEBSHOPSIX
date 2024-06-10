@@ -24,29 +24,12 @@ const ProductPage = () => {
     });
   };
 
-  const removeFromCart = (productId) => {
-    setCartItems((prevItems) =>
-      prevItems.filter((item) => item.id !== productId)
-    );
-  };
-
-  const updateQuantity = (productId, quantity) => {
-    setCartItems((prevItems) =>
-      prevItems.map((item) =>
-        item.id === productId
-          ? { ...item, quantity: Math.max(1, quantity) }
-          : item
-      )
-    );
-  };
-
   const handleChange = (event, value) => {
     setPage(value);
   };
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Product Page</h1>
       <Routes>
         <Route
           path="/"
@@ -59,7 +42,7 @@ const ProductPage = () => {
           }
         />
         <Route
-          path="/SingleProductPage/:productId"
+          path="/product/:productId"
           element={<SingleProductPage addToCart={addToCart} />}
         />
       </Routes>

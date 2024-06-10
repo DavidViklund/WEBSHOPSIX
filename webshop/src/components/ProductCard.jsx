@@ -43,22 +43,22 @@ const ProductCard = ({ page, itemsPerPage, setTotalProducts }) => {
         {paginatedProducts.map((product) => (
           <div
             key={product.id}
-            className="flex flex-col m-4 border border-greyscale-border-darker p-4 rounded-xl"
+            className="flex flex-col justify-between m-4 border border-greyscale-border-darker p-4 rounded-xl"
           >
-            <div className="flex items-center">
+            <div className="flex justify-center items-center h-[400px] bg-white">
               <img
-                className="w-full h-full object-cover"
+                className="max-h-full object-cover rounded-lg"
                 src={product.image}
                 alt={product.title}
               />
             </div>
             <div className="flex justify-between border-t mt-2 pt-2">
               <p className="font-bold">{product.title}</p>
-              <p>{product.category}</p>
+              <p className=" capitalize">{product.category}</p>
             </div>
             <div className="flex justify-between border-t mt-2 pt-2">
               <Button text="See more" to={`/SingleProductPage/${product.id}`} />
-              <p>{product.price}$</p>
+              <h5>{product.price}$</h5>
             </div>
           </div>
         ))}
