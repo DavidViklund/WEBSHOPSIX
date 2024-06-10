@@ -1,9 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import BasketButton from "./buttons/BasketButton";
 
 const NavBar = ({ cartQty }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [flash, setFlash] = useState(false);
+
+  useEffect(() => {
+    console.log("Cart quantity changed:", cartQty);
+    if (cartQty > 0) {
+      setFlash(true);
+      const timer = setTimeout(() => {
+        setFlash(false);
+        console.log("Flash reset");
+      }, 500);
+      return () => clearTimeout(timer);
+    }
+  }, [cartQty]);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -17,7 +30,7 @@ const NavBar = ({ cartQty }) => {
     <div className="NavBarContainer flex flex-col p-4 justify-center bg-greyscale-surface-default/50 rounded-xl">
       <div className="closedNav flex items-center justify-between">
         <Link className="text-2xl" to="/">
-          <h4 className=" text-primary-text-label">HaulMart</h4>
+          <h4 className="text-primary-text-label">HaulMart</h4>
         </Link>
         <div
           className="iconBox flex items-center lg:hidden"
@@ -30,6 +43,7 @@ const NavBar = ({ cartQty }) => {
             icon={
               <span className="material-symbols-outlined">shopping_cart</span>
             }
+            flash={flash}
           />
           <span className="material-symbols-outlined flex items-center justify-center w-10 h-10">
             {isOpen ? "menu_open" : "menu"}
@@ -48,6 +62,7 @@ const NavBar = ({ cartQty }) => {
             icon={
               <span className="material-symbols-outlined">shopping_cart</span>
             }
+            flash={flash}
           />
         </div>
       </div>

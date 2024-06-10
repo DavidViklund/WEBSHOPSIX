@@ -26,7 +26,7 @@ const App = () => {
             <Route path="/" element={<LandingPage />} />
             <Route path="/shop" element={<ProductPageWrapper />} />
             <Route
-              path="/SingleProductPage/:productId"
+              path="/product/:productId"
               element={<SingleProductPageWrapper />}
             />
             <Route path="/about" element={<AboutUsPage />} />

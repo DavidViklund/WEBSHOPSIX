@@ -14,6 +14,8 @@ const CheckoutProvider = ({ children }) => {
     return savedCartItems ? JSON.parse(savedCartItems) : [];
   });
 
+  const [flash, setFlash] = useState(false); // State for flash effect
+
   useEffect(() => {
     // Save cart items to local storage whenever they change
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
@@ -31,6 +33,8 @@ const CheckoutProvider = ({ children }) => {
       }
       return [...prevItems, { ...product, quantity: 1 }];
     });
+    setFlash(true); // Trigger flash effect when adding to cart
+    setTimeout(() => setFlash(false), 500); // Reset flash effect after 500ms
   };
 
   const removeFromCart = (productId) => {
@@ -47,11 +51,13 @@ const CheckoutProvider = ({ children }) => {
           : item
       )
     );
+    setFlash(true); // Trigger flash effect when updating quantity
+    setTimeout(() => setFlash(false), 500); // Reset flash effect after 500ms
   };
 
   return (
     <CheckoutContext.Provider
-      value={{ cartItems, addToCart, removeFromCart, updateQuantity }}
+      value={{ cartItems, addToCart, removeFromCart, updateQuantity, flash }}
     >
       {children}
     </CheckoutContext.Provider>

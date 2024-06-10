@@ -17,7 +17,7 @@ const CategoryFilter = ({ setCategory, activeCategory }) => {
   return (
     <div className=" flex flex-col gap-2">
       <h5>Categories</h5>
-      <div className="flex gap-2 mb-4">
+      <div className="flex gap-2 flex-wrap">
         <button
           onClick={() => setCategory("all")}
           className={` rounded-3xl px-4 py-2 ${

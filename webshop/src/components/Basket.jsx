@@ -13,7 +13,7 @@ const Basket = ({ cartItems, removeFromCart, updateQuantity }) => {
   const navigate = useNavigate();
 
   const handleCheckout = () => {
-    navigate("/OrderSummaryPage");
+    navigate("/summary");
   };
 
   return (

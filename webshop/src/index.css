@@ -6,6 +6,7 @@
   body {
     @apply bg-greyscale-surface-default;
   }
+
   h1 {
     @apply text-4xl font-montserrat font-bold lg:text-5xl text-greyscale-text-title;
   }
@@ -31,6 +32,33 @@
     @apply text-lg font-roboto font-medium text-primary-text-label;
   }
   .navLink {
-    @apply p-2 relative  hover:text-primary-text-icon cursor-pointer transition-all ease-in-out before:transition-[width] before:ease-in-out before:duration-700 before:absolute before:bg-primary-text-icon before:origin-center before:h-[2px] before:w-0 hover:before:w-[50%] before:bottom-0 before:left-[50%] after:transition-[width] after:ease-in-out after:duration-700 after:absolute after:bg-primary-text-icon after:origin-center after:h-[2px] after:w-0 hover:after:w-[50%] after:bottom-0 after:right-[50%];
+    @apply p-2 relative hover:text-primary-text-icon cursor-pointer transition-all ease-in-out before:transition-[width] before:ease-in-out before:duration-700 before:absolute before:bg-primary-text-icon before:origin-center before:h-[2px] before:w-0 hover:before:w-[50%] before:bottom-0 before:left-[50%] after:transition-[width] after:ease-in-out after:duration-700 after:absolute after:bg-primary-text-icon after:origin-center after:h-[2px] after:w-0 hover:after:w-[50%] after:bottom-0 after:right-[50%];
+  }
+}
+
+@layer components {
+  .basketButton.flash {
+    @apply animate-flash-animation;
+  }
+}
+
+@layer utilities {
+  @keyframes flash-animation {
+    0%,
+    100% {
+      @apply bg-transparent;
+    }
+    50% {
+      @apply bg-primary-surface-lighter text-greyscale-text-negative;
+    }
+    25% {
+      @apply bg-primary-surface-darker text-greyscale-text-negative;
+    }
+  }
+
+  @variants responsive, hover {
+    .animate-flash-animation {
+      animation: flash-animation 0.5s ease-in-out;
+    }
   }
 }
