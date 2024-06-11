@@ -15,8 +15,8 @@ const aboutUsPage = () => {
             <div className=" flex flex-col gap-2">
               <div>
                 <img
-                  alt="chefpic"
-                  src="public/colours.jpeg"
+                  alt="designbeslut"
+                  src="public/design2.jpeg"
                   className=" h-auto w-[500px] rounded-xl"
                 />
               </div>
@@ -45,13 +45,16 @@ const aboutUsPage = () => {
             </div>
             <div className=" flex flex-col gap-2">
               <h5>Rollfördelning</h5>
-              <p>rollfördelning 1</p>
-              <p>rollfördelning 2</p>
-              <p>rollfördelning 3</p>
+              <p>Scrum-master</p>
+              <p>Figma-master</p>
+              <p>Sekreterare</p>
+              <p>Alla bidrog med kod!</p>
               <h5>Arbetsprocess och agil arbetsmetodik - utveckla mycket</h5>
-              <p>punkt 1</p>
-              <p>punkt 2</p>
-              <p>punkt 3</p>
+              <p>GitHub - Kanban</p>
+              <p>MVP!</p>
+              <p>Agilt arbete</p>
+              <p>Sprint - retro</p>
+              <p>Daglig stand-up</p>
             </div>
           </div>
           <div className=" flex flex-col gap-4">
