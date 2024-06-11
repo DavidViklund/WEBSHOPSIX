@@ -112,7 +112,7 @@ const Basket = () => {
                 <div className="flex items-center justify-start gap-6">
                   <DeleteButton
                     onClick={removeAllFromCart}
-                    text={"Delete basket"}
+                    text={"Delete cart"}
                     icon={
                       <span className="material-symbols-outlined">delete</span>
                     }
@@ -121,7 +121,7 @@ const Basket = () => {
                   <SuccessButton
                     onClick={handleCheckout}
                     to="/summary"
-                    text={"Purchase order"}
+                    text={"Buy now"}
                     icon={
                       <span className="material-symbols-outlined">
                         shopping_bag

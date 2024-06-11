@@ -32,7 +32,7 @@ const NavBar = ({ cartQty }) => {
         <Link className="text-2xl" to="/">
           <h4 className="text-primary-text-label">HaulMart</h4>
         </Link>
-        <div className="flex gap-1">
+        <div className="flex gap-1 lg:hidden">
           <BasketButton
             to="/cart"
             qty={cartQty}
@@ -42,7 +42,7 @@ const NavBar = ({ cartQty }) => {
             flash={flash}
           />
           <div
-            className="iconBox flex items-center lg:hidden"
+            className="iconBox flex items-center "
             onClick={toggleMenu}
             style={{ cursor: "pointer" }}
           >
