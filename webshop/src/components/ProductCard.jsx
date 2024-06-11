@@ -1,8 +1,8 @@
-import React, { useMemo, useState, useEffect } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { getProducts } from "../api/dataFetching";
-import CategoryFilter from "./CategoryFilter";
-import Button from "./buttons/Button";
+import React, { useMemo, useState, useEffect } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import { getProducts } from '../api/dataFetching';
+import CategoryFilter from './CategoryFilter';
+import Button from './buttons/Button';
 
 const ProductCard = ({ page, itemsPerPage, setTotalProducts }) => {
   const {
@@ -10,11 +10,11 @@ const ProductCard = ({ page, itemsPerPage, setTotalProducts }) => {
     error,
     isLoading,
   } = useQuery({
-    queryKey: ["products"],
+    queryKey: ['products'],
     queryFn: getProducts,
   });
 
-  const [category, setCategory] = useState("all");
+  const [category, setCategory] = useState('all');
 
   useEffect(() => {
     if (products) {
@@ -24,7 +24,7 @@ const ProductCard = ({ page, itemsPerPage, setTotalProducts }) => {
 
   const filteredProducts = useMemo(() => {
     if (!products) return [];
-    if (category === "all") return products;
+    if (category === 'all') return products;
     return products.filter((product) => product.category === category);
   }, [products, category]);
 
@@ -41,16 +41,9 @@ const ProductCard = ({ page, itemsPerPage, setTotalProducts }) => {
       <CategoryFilter setCategory={setCategory} activeCategory={category} />
       <div className="card grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-6">
         {paginatedProducts.map((product) => (
-          <div
-            key={product.id}
-            className="flex flex-col gap-3 border border-greyscale-border-darker p-4 rounded-xl"
-          >
+          <div key={product.id} className="flex flex-col gap-3 border border-greyscale-border-darker  bg-greyscale-surface-subtle p-4 rounded-xl">
             <div className="flex justify-center items-center h-[400px] bg-white rounded-lg border border-greyscale-border-default">
-              <img
-                className="max-h-full object-cover rounded-lg"
-                src={product.image}
-                alt={product.title}
-              />
+              <img className="max-h-full object-cover rounded-lg" src={product.image} alt={product.title} />
             </div>
             <div className=" flex flex-col justify-between flex-grow gap-6">
               <div className="flex flex-col gap-2 ">

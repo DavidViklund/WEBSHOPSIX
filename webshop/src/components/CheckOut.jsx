@@ -47,7 +47,7 @@ const CheckOut = () => {
         )}
       </div>
       <div className="flex items-center justify-center py-4">
-        <Button to="/" text={'Back to start'} icon={<span class="material-symbols-outlined">home</span>} />
+        <Button to="/" text={'Back to start'} icon={<span className="material-symbols-outlined">home</span>} />
       </div>
     </div>
   );
