@@ -21,19 +21,21 @@ const App = () => {
     <QueryClientProvider client={queryClient}>
       <CheckoutProvider>
         <BrowserRouter>
-          <NavBarWrapper />
-          <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/shop" element={<ProductPageWrapper />} />
-            <Route
-              path="/product/:productId"
-              element={<SingleProductPageWrapper />}
-            />
-            <Route path="/about" element={<AboutUsPage />} />
-            <Route path="/cart" element={<CartPageWrapper />} />
-            <Route path="/summary" element={<OrderSummaryPageWrapper />} />
-          </Routes>
-          <Footer />
+          <main className="relative min-h-screen">
+            <NavBarWrapper />
+            <Routes>
+              <Route path="/" element={<LandingPage />} />
+              <Route path="/shop" element={<ProductPageWrapper />} />
+              <Route
+                path="/product/:productId"
+                element={<SingleProductPageWrapper />}
+              />
+              <Route path="/about" element={<AboutUsPage />} />
+              <Route path="/cart" element={<CartPageWrapper />} />
+              <Route path="/summary" element={<OrderSummaryPageWrapper />} />
+            </Routes>
+            <Footer />
+          </main>
         </BrowserRouter>
       </CheckoutProvider>
     </QueryClientProvider>
