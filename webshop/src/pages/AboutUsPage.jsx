@@ -20,18 +20,22 @@ const aboutUsPage = () => {
                   className=" h-auto w-[500px] rounded-xl"
                 />
               </div>
-              <h5>Allmänt om designen - enkelt och UI-säkert formspråk.</h5>
-              <p>design 1</p>
-              <p>design 2</p>
-              <p>design 3</p>
+              <h5>Allmänt om designen</h5>
+              <p>Enkelt och UI-säkert</p>
+              <p>Använde färdigt designsystem</p>
+              <p>Figma som ritning</p>
               <h5>Färger</h5>
-              <p>nånting om färg 1</p>
+              <p>Mindre kognitiv belastning</p>
+              <p>Tydligt CTA</p>
+              <p>Varje färg har ett syfte</p>
               <h5>Font</h5>
-              <p>nånting om font 1</p>
+              <p>Hög läsbarhet</p>
+              <p>Ökad prestanda</p>
+              <p>Visuell hiearki</p>
               <h5>Kod</h5>
-              <p>om kod 1</p>
-              <p>om kod 2</p>
-              <p>om kod 3</p>
+              <p>Styling med tailwind</p>
+              <p>Sorterat i mappar</p>
+              <p>Följa Sagas praxis</p>
             </div>
           </div>
           <div className=" flex flex-col gap-4">
@@ -68,17 +72,18 @@ const aboutUsPage = () => {
             </div>
             <div className=" flex flex-col gap-2">
               <h5>Vilka lärdomar tar vi med oss?</h5>
-              <p>lärdom 1</p>
-              <p>lärdom 2</p>
-              <p>lärdom 3</p>
+              <p>M.I.O.S!</p>
+              <p>Inte jaga perfektion</p>
+              <p>Grupparbete i github</p>
+              <p>Återanvända kod</p>
               <h5>Vad som fungerade bra?</h5>
-              <p>bra grej 1</p>
-              <p>bra grej 2</p>
-              <p>bra grej 3</p>
+              <p>Tydlig grundstruktur</p>
+              <p>Bra gruppdynamik</p>
+              <p>Rolig uppgift</p>
               <h5>Vad hade kunnat förbättras?</h5>
-              <p>förbättring 1</p>
-              <p>förbättring 2</p>
-              <p>förbättring 3</p>
+              <p>Inte mapp i en mapp!</p>
+              <p>Släpp inte garden!</p>
+              <p>Designen!</p>
             </div>
           </div>
         </div>
