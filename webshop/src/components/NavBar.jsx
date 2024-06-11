@@ -32,11 +32,7 @@ const NavBar = ({ cartQty }) => {
         <Link className="text-2xl" to="/">
           <h4 className="text-primary-text-label">HaulMart</h4>
         </Link>
-        <div
-          className="iconBox flex items-center lg:hidden"
-          onClick={toggleMenu}
-          style={{ cursor: "pointer" }}
-        >
+        <div className="flex gap-1">
           <BasketButton
             to="/cart"
             qty={cartQty}
@@ -45,9 +41,15 @@ const NavBar = ({ cartQty }) => {
             }
             flash={flash}
           />
-          <span className="material-symbols-outlined flex items-center justify-center w-10 h-10">
-            {isOpen ? "menu_open" : "menu"}
-          </span>
+          <div
+            className="iconBox flex items-center lg:hidden"
+            onClick={toggleMenu}
+            style={{ cursor: "pointer" }}
+          >
+            <span className="material-symbols-outlined flex items-center justify-center w-10 h-10">
+              {isOpen ? "menu_open" : "menu"}
+            </span>
+          </div>
         </div>
         <div className="gap-2 hidden lg:flex lg:items-center">
           <Link className="navLink" to="/shop" onClick={closeMenu}>
