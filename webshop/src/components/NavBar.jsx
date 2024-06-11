@@ -1,9 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import BasketButton from "./BasketButton";
+import BasketButton from "./buttons/BasketButton";
 
 const NavBar = ({ cartQty }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [flash, setFlash] = useState(false);
+
+  useEffect(() => {
+    console.log("Cart quantity changed:", cartQty);
+    if (cartQty > 0) {
+      setFlash(true);
+      const timer = setTimeout(() => {
+        setFlash(false);
+        console.log("Flash reset");
+      }, 500);
+      return () => clearTimeout(timer);
+    }
+  }, [cartQty]);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -17,7 +30,7 @@ const NavBar = ({ cartQty }) => {
     <div className="NavBarContainer flex flex-col p-4 justify-center bg-greyscale-surface-default/50 rounded-xl">
       <div className="closedNav flex items-center justify-between">
         <Link className="text-2xl" to="/">
-          <h4 className=" text-primary-text-label">HaulMart</h4>
+          <h4 className="text-primary-text-label">HaulMart</h4>
         </Link>
         <div
           className="iconBox flex items-center lg:hidden"
@@ -25,38 +38,40 @@ const NavBar = ({ cartQty }) => {
           style={{ cursor: "pointer" }}
         >
           <BasketButton
-            to="/CartPage"
+            to="/cart"
             qty={cartQty}
             icon={
               <span className="material-symbols-outlined">shopping_cart</span>
             }
+            flash={flash}
           />
           <span className="material-symbols-outlined flex items-center justify-center w-10 h-10">
             {isOpen ? "menu_open" : "menu"}
           </span>
         </div>
         <div className="gap-2 hidden lg:flex lg:items-center">
-          <Link className="navLink" to="/ProductPage" onClick={closeMenu}>
+          <Link className="navLink" to="/shop" onClick={closeMenu}>
             PRODUCTS
           </Link>
-          <Link className="navLink" to="/AboutUsPage" onClick={closeMenu}>
+          <Link className="navLink" to="/about" onClick={closeMenu}>
             ABOUT US
           </Link>
           <BasketButton
-            to="/CartPage"
+            to="/cart"
             qty={cartQty}
             icon={
               <span className="material-symbols-outlined">shopping_cart</span>
             }
+            flash={flash}
           />
         </div>
       </div>
       {isOpen && (
         <div className="openNav flex flex-col gap-2 items-center max-w-[1440px]">
-          <Link className="navLink" to="/ProductPage" onClick={closeMenu}>
+          <Link className="navLink" to="/shop" onClick={closeMenu}>
             PRODUCTS
           </Link>
-          <Link className="navLink" to="/AboutUsPage" onClick={closeMenu}>
+          <Link className="navLink" to="/about" onClick={closeMenu}>
             ABOUT US
           </Link>
         </div>

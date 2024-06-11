@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
-import Button from "./Button";
-import SecondaryButton from "./SecondaryButton";
+import Button from "./buttons/Button";
+import SecondaryButton from "./buttons/SecondaryButton";
 import { getProducts } from "../api/dataFetching";
 
 const HeroSection = () => {
@@ -59,9 +59,9 @@ const HeroSection = () => {
           </div>
 
           <div className="flex gap-4 justify-center lg:justify-start">
-            <Button to="/ProductPage" text={"Go to shop"} />
+            <Button to="/shop" text={"Go to shop"} />
             <SecondaryButton
-              to="/AboutUsPage"
+              to="/about"
               className="flex items-center justify-between px-8 py-4 font-normal rounded-xl bg-greyscale-surface-default text-primary-text-label hover:bg-primary-surface-darker hover:text-greyscale-text-negative border border-primary-border-lighter"
               text={"About us"}
             />
