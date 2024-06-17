@@ -17,7 +17,7 @@ const aboutUsPage = () => {
               <div>
                 <img
                   alt="designbeslut"
-                  src="public/design2.jpeg"
+                  src="public/assets/design2.jpeg"
                   className="h-auto w-[500px] rounded-xl"
                 />
               </div>
@@ -118,7 +118,7 @@ const aboutUsPage = () => {
             <div>
               <img
                 alt="militarypic"
-                src="public/military.jpg"
+                src="public/assets/military.jpg"
                 className="h-auto w-[500px] rounded-xl"
               />
             </div>
@@ -158,7 +158,7 @@ const aboutUsPage = () => {
             <div>
               <img
                 alt="chefpic"
-                src="public/chefs.jpg"
+                src="public/assets/chefs.jpg"
                 className="h-auto w-[500px] rounded-xl"
               />
             </div>
