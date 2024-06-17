@@ -1,3 +1,5 @@
+//Samling för alla sidor som plockar context för ökning/minskning av produkter etc.
+
 import React from "react";
 import { useCheckout } from "../context/CheckoutProvider";
 import NavBar from "./NavBar";

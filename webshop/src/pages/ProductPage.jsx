@@ -1,14 +1,49 @@
-import React, { useState } from "react";
+import React, { useState, useMemo, useEffect } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { Routes, Route } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
 import SingleProductPage from "./SingleProductPage";
 import Paginering from "../components/Paginering";
-import { Routes, Route } from "react-router-dom";
+import CategoryFilter from "../components/CategoryFilter";
+import { getProducts } from "../api/dataFetching";
 
 const ProductPage = () => {
   const [cartItems, setCartItems] = useState([]);
   const [page, setPage] = useState(1);
+  const [category, setCategory] = useState("all");
   const itemsPerPage = 8;
-  const [totalProducts, setTotalProducts] = useState(0); // Lägg till en state för totalt antal produkter
+  const [totalProducts, setTotalProducts] = useState(0);
+
+  const {
+    data: products,
+    error,
+    isLoading,
+  } = useQuery({
+    queryKey: ["products"],
+    queryFn: getProducts,
+  });
+
+  useEffect(() => {
+    if (products) {
+      setTotalProducts(products.length); //Räknar ut antal produkter så vi kan se det på kategorierna
+    }
+  }, [products]);
+
+  const filteredProducts = useMemo(() => {
+    if (!products) return [];
+    if (category === "all") return products;
+    return products.filter((product) => product.category === category);
+  }, [products, category]);
+
+  // Visar antal produkter per kategori
+  useEffect(() => {
+    setTotalProducts(filteredProducts.length);
+  }, [filteredProducts]);
+
+  const paginatedProducts = useMemo(() => {
+    const startIndex = (page - 1) * itemsPerPage;
+    return filteredProducts.slice(startIndex, startIndex + itemsPerPage);
+  }, [filteredProducts, page, itemsPerPage]);
 
   const addToCart = (product) => {
     setCartItems((prevItems) => {
@@ -26,18 +61,26 @@ const ProductPage = () => {
 
   const handleChange = (event, value) => {
     setPage(value);
+    window.scrollTo({ top: 0, behavior: "smooth" }); // scrollar upp när man använder paginering för bättre UX
   };
+
+  const pageCount = Math.ceil(totalProducts / itemsPerPage);
 
   return (
     <div className="container mx-auto p-4">
+      <CategoryFilter
+        setCategory={setCategory}
+        activeCategory={category}
+        products={products}
+      />
       <Routes>
         <Route
           path="/"
           element={
             <ProductCard
-              page={page}
-              itemsPerPage={itemsPerPage}
-              setTotalProducts={setTotalProducts}
+              paginatedProducts={paginatedProducts}
+              isLoading={isLoading}
+              error={error}
             />
           }
         />
@@ -47,11 +90,13 @@ const ProductPage = () => {
         />
       </Routes>
       <div className="flex justify-center mt-4">
-        <Paginering
-          page={page}
-          count={Math.ceil(totalProducts / itemsPerPage)} // Antalet sidor baserat på totalt antal produkter
-          handleChange={handleChange}
-        />
+        {pageCount > 1 && (
+          <Paginering
+            page={page}
+            count={pageCount}
+            handleChange={handleChange}
+          />
+        )}
       </div>
     </div>
   );

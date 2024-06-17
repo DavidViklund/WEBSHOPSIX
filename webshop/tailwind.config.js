@@ -1,3 +1,5 @@
+/* Lagt in vårat designsystems färger och typografi **/
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],

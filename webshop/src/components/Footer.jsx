@@ -1,3 +1,4 @@
+//Hmm... EN FOOTER
 import React from "react";
 import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 
