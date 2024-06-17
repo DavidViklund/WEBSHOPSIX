@@ -1,3 +1,4 @@
+//För alla former av remove funktioner.
 import { Link } from "react-router-dom";
 
 const DeleteButton = ({ text, icon, to, onClick }) => {

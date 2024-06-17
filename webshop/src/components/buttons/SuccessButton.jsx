@@ -1,3 +1,4 @@
+//För allt som har med ett köp att göra.
 import { Link } from "react-router-dom";
 
 const SuccessButton = ({ text, icon, to, onClick }) => {

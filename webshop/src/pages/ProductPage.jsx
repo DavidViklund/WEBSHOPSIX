@@ -25,7 +25,7 @@ const ProductPage = () => {
 
   useEffect(() => {
     if (products) {
-      setTotalProducts(products.length); // Update totalProducts with the number of products
+      setTotalProducts(products.length); //Räknar ut antal produkter så vi kan se det på kategorierna
     }
   }, [products]);
 
@@ -35,7 +35,7 @@ const ProductPage = () => {
     return products.filter((product) => product.category === category);
   }, [products, category]);
 
-  // Update total products to reflect the filtered products
+  // Visar antal produkter per kategori
   useEffect(() => {
     setTotalProducts(filteredProducts.length);
   }, [filteredProducts]);
@@ -61,7 +61,7 @@ const ProductPage = () => {
 
   const handleChange = (event, value) => {
     setPage(value);
-    window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll to top when page changes
+    window.scrollTo({ top: 0, behavior: "smooth" }); // scrollar upp när man använder paginering för bättre UX
   };
 
   const pageCount = Math.ceil(totalProducts / itemsPerPage);

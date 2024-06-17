@@ -1,3 +1,4 @@
+//NÄMEN... EN NAVBAR
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import BasketButton from "./buttons/BasketButton";
@@ -6,6 +7,7 @@ const NavBar = ({ cartQty }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [flash, setFlash] = useState(false);
 
+  //Här uppdateras varukorgen med siffra och en liten flash effect för indikation
   useEffect(() => {
     console.log("Cart quantity changed:", cartQty);
     if (cartQty > 0) {

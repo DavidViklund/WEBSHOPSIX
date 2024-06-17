@@ -1,8 +1,9 @@
+//Använd i navbar för varukorg.
 import React from "react";
 import { Link } from "react-router-dom";
 
 const BasketButton = ({ text, icon, qty, to, flash }) => {
-  // Display 0 if qty is not provided or is 0
+  // Visa 0 om varukorg är tom
   const displayQty = qty ? qty : 0;
 
   return (

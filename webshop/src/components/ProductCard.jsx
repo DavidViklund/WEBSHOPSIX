@@ -1,3 +1,4 @@
+//Produktkorten, data hämtas från funktionen dataFetching.js.
 import React from "react";
 import Button from "./buttons/Button";
 

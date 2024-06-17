@@ -1,3 +1,4 @@
+//Lägre hierarki knappar.
 import { Link } from "react-router-dom";
 
 const SecondaryButton = ({ text, icon, to, onClick }) => {

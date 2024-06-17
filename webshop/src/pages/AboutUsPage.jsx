@@ -1,3 +1,4 @@
+//Vår presentationssida
 const aboutUsPage = () => {
   return (
     <div className=" flex justify-center px-4 md:px-8 lg:px-40">

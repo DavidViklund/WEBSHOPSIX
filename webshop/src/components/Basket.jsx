@@ -1,3 +1,4 @@
+//Varukorg
 import React from "react";
 import Button from "./buttons/Button";
 import DeleteButton from "./buttons/DeleteButton";
@@ -23,8 +24,8 @@ const Basket = () => {
   const navigate = useNavigate();
 
   const handleCheckout = () => {
-    setOrderSummaryItems(cartItems); // Store cart items in order summary
-    removeAllFromCart(); // Clear the cart
+    setOrderSummaryItems(cartItems);
+    removeAllFromCart();
     navigate("/summary");
   };
 

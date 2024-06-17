@@ -5,6 +5,7 @@ import LandingPage from "./pages/LandingPage";
 import AboutUsPage from "./pages/AboutUsPage";
 import Footer from "./components/Footer";
 import CheckoutProvider from "./context/CheckoutProvider";
+//Här hämtar vi alla sidor som använder kontext för att få cleanare kod.
 import {
   NavBarWrapper,
   ProductPageWrapper,
@@ -13,7 +14,6 @@ import {
   OrderSummaryPageWrapper,
 } from "./components/ContextWrapper";
 
-// Create a client
 const queryClient = new QueryClient();
 
 const App = () => {

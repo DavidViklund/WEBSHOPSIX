@@ -1,3 +1,4 @@
+//sida för vår varukorg
 import React from "react";
 import Basket from "../components/Basket";
 

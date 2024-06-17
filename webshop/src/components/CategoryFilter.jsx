@@ -1,3 +1,4 @@
+//Filter för kategorier på produktsida
 import { useQuery } from "@tanstack/react-query";
 import { getCategories } from "../api/dataFetching";
 

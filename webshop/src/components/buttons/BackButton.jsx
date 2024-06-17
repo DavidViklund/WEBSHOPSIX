@@ -1,3 +1,5 @@
+//Ska användas där tillbaksknapp krävs.
+
 import { Link } from "react-router-dom";
 
 const BackButton = ({ text, icon, to }) => {

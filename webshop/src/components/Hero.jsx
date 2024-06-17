@@ -1,3 +1,4 @@
+//Hmmm... EN HERO med bildspel från API
 import React, { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import Button from "./buttons/Button";
@@ -16,23 +17,17 @@ const HeroSection = () => {
 
   const [imageUrl, setImageUrl] = useState(null);
 
+  //Här plockar vi random bilder från API till ett bildspel.
   useEffect(() => {
     if (products && products.length > 0) {
-      // Function to select a random image URL
       const getRandomImage = () => {
         const randomIndex = Math.floor(Math.random() * products.length);
         return products[randomIndex].image;
       };
-
-      // Set initial random image
       setImageUrl(getRandomImage());
-
-      // Set interval to update the image every 5 seconds (5000 ms)
       const intervalId = setInterval(() => {
         setImageUrl(getRandomImage());
       }, 2000);
-
-      // Cleanup interval on component unmount
       return () => clearInterval(intervalId);
     }
   }, [products]);

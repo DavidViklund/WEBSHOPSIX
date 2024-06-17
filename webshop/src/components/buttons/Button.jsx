@@ -1,3 +1,5 @@
+//Primary knapp för allt som inte har med ett köp att göra
+
 import { Link } from "react-router-dom";
 
 const Button = ({ text, icon, to, onClick }) => {
