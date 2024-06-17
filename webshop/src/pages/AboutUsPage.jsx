@@ -23,7 +23,7 @@ const aboutUsPage = () => {
               <h5>Allmänt om designen</h5>
               {/*  <p>
                 Vi har strävat efter en enkel och UI-säker design. Se
-                Figma-filen för utförlig motivering
+                Figma-filen för utförlig motivering.
               </p> */}
               <p>Enkelt och UI-säkert</p>
               <p>Använde färdigt designsystem</p>
@@ -58,7 +58,9 @@ const aboutUsPage = () => {
               <p>Hög läsbarhet</p>
               {/* <p>
                 Vi använde fonterna Montserrat och Roboto. Båda har raka linjer
-                och mjuka former, vilket gör dem lättlästa.
+                och mjuka former, vilket gör dem lättlästa. 
+                Här la vi till en lineheight som främjar läsbarheten och matchar vårt
+                spacingsystem. 
               </p> */}
               <p>Ökad prestanda</p>
               {/*  <p>
@@ -217,7 +219,8 @@ const aboutUsPage = () => {
               {/* <p>
                 Den behövde förbättras och itereras. När man designar i Figma
                 ska man ha koden i åtanke, så att ritningen kan översättas
-                bättre till kod. Till exempel:
+                bättre till kod. Till exempel: Vikten av att designa utifrån befintlig data för att se 
+                hur långa texter etc kan vara i din design. Den hade också kunnat bli lite roligare..
               </p> */}
             </div>
           </div>
