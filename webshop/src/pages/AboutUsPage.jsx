@@ -1,10 +1,10 @@
 const aboutUsPage = () => {
   return (
-    <div className="max-w[1440px] flex justify-center sm:px-4 md:px-8 lg:px-40">
+    <div className=" flex justify-center px-4 md:px-8 lg:px-40">
       <div className="flex flex-col gap-16 justify-start">
         <div className="flex flex-col items-center gap-4">
           <h1 className="text-primary-text-label font-semibold">HaulMart</h1>
-          <div className="flex gap-4 flex-wrap">
+          <div className="flex gap-4 text-center flex-wrap items-center justify-center">
             <h4>David</h4> <h4>Frida</h4> <h4>Jonas</h4> <h4>Joakim</h4>{" "}
             <h4>Filippa</h4>
           </div>
