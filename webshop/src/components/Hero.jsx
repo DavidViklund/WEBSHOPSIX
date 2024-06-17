@@ -67,7 +67,7 @@ const HeroSection = () => {
             />
           </div>
         </div>
-        <div className="flex items-center bg-white  rounded-xl p-4 overflow-hidden">
+        <div className="flex items-center bg-white  rounded-xl p-4 m-4 overflow-hidden">
           {imageUrl ? (
             <img
               className=" sm:w-[300px] md:w-[400px] lg:w-[500px] h-[400px] object-fit"

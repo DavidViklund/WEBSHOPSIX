@@ -28,7 +28,7 @@ const NavBar = ({ cartQty }) => {
 
   return (
     <div className="NavBarContainer flex flex-col p-4 justify-center bg-greyscale-surface-default/50 rounded-xl">
-      <div className="closedNav flex items-center justify-between">
+      <div className="closedNav flex items-center justify-between ">
         <Link className="text-2xl" to="/">
           <h4 className="text-primary-text-label">HaulMart</h4>
         </Link>
@@ -69,7 +69,7 @@ const NavBar = ({ cartQty }) => {
         </div>
       </div>
       {isOpen && (
-        <div className="openNav flex flex-col gap-2 items-center max-w-[1440px]">
+        <div className="openNav flex flex-col py-8 gap-4 items-center max-w-[1440px]">
           <Link className="navLink" to="/shop" onClick={closeMenu}>
             PRODUCTS
           </Link>

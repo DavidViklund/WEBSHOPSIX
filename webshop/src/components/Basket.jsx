@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "./buttons/Button";
 import DeleteButton from "./buttons/DeleteButton";
 import SuccessButton from "./buttons/SuccessButton";
 import BackButton from "./buttons/BackButton";
@@ -28,8 +29,8 @@ const Basket = () => {
   };
 
   return (
-    <div className="w-full flex justify-center py-8">
-      <div className="w-full max-w-[1440px] px-4 md:px-8 lg:px-40">
+    <div className="w-full flex justify-center lg:m-8">
+      <div className=" flex flex-col gap-8  max-w-[1440px]  px-4 md:px-8 lg:px-40">
         <div className="flex">
           <BackButton
             to={"/"}
@@ -38,9 +39,12 @@ const Basket = () => {
           />
         </div>
         {cartItems.length === 0 ? (
-          <p>Your cart is empty.</p>
+          <div className=" flex flex-col justify-center items-center gap-6 p-20 text-center bg-greyscale-surface-subtle rounded-xl border border-greyscale-border-default">
+            <h2>Your cart is empty!</h2>
+            <Button to={"/shop"} text={"Continue Shopping"}></Button>
+          </div>
         ) : (
-          <div className="flex flex-col justify-center mt-8 gap-8">
+          <div className="flex flex-col justify-start items-center mt-8 gap-8">
             <h2 className="text-center">Your items</h2>
             <div className="flex flex-col gap-8">
               <div className="flex flex-wrap justify-center gap-4">

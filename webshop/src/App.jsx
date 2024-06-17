@@ -1,11 +1,17 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import LandingPage from './pages/LandingPage';
-import AboutUsPage from './pages/AboutUsPage';
-import Footer from './components/Footer';
-import CheckoutProvider from './context/CheckoutProvider';
-import { NavBarWrapper, ProductPageWrapper, SingleProductPageWrapper, CartPageWrapper, OrderSummaryPageWrapper } from './components/ContextWrapper';
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import LandingPage from "./pages/LandingPage";
+import AboutUsPage from "./pages/AboutUsPage";
+import Footer from "./components/Footer";
+import CheckoutProvider from "./context/CheckoutProvider";
+import {
+  NavBarWrapper,
+  ProductPageWrapper,
+  SingleProductPageWrapper,
+  CartPageWrapper,
+  OrderSummaryPageWrapper,
+} from "./components/ContextWrapper";
 
 // Create a client
 const queryClient = new QueryClient();
@@ -19,7 +25,10 @@ const App = () => {
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/shop/*" element={<ProductPageWrapper />} />
-            <Route path="/product/:productId" element={<SingleProductPageWrapper />} />
+            <Route
+              path="/product/:productId"
+              element={<SingleProductPageWrapper />}
+            />
             <Route path="/about" element={<AboutUsPage />} />
             <Route path="/cart" element={<CartPageWrapper />} />
             <Route path="/summary" element={<OrderSummaryPageWrapper />} />
