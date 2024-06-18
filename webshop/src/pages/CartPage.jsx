@@ -4,7 +4,7 @@ import Basket from "../components/Basket";
 
 const CartPage = ({ cartItems, removeFromCart, updateQuantity }) => {
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col">
       <Basket
         cartItems={cartItems}
         removeFromCart={removeFromCart}
