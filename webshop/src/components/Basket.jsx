@@ -84,7 +84,7 @@ const Basket = () => {
                             onClick={() =>
                               updateQuantity(item.id, item.quantity - 1)
                             }
-                            className="bg-greyscale-surface-default w-10 h-10 flex items-center justify-center border border-greyscale-border-default rounded-lg hover:bg-error-surface-lighter"
+                            className="bg-greyscale-surface-default w-10 h-10 flex items-center justify-center border border-greyscale-border-default rounded-lg lg:hover:bg-error-surface-lighter"
                           >
                             <span className="material-symbols-outlined">
                               remove
@@ -97,7 +97,7 @@ const Basket = () => {
                             onClick={() =>
                               updateQuantity(item.id, item.quantity + 1)
                             }
-                            className="bg-greyscale-surface-default w-10 h-10 flex items-center justify-center border border-greyscale-border-default rounded-lg hover:bg-success-surface-lighter"
+                            className="bg-greyscale-surface-default w-10 h-10 flex items-center justify-center border border-greyscale-border-default rounded-lg lg:hover:bg-success-surface-lighter"
                           >
                             <span className="material-symbols-outlined">
                               add
